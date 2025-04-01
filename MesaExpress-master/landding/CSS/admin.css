@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+    :root{
+        --primary-color:  #3E7D32;
+        --secundary-color:#A2D149;
+        --text-color:#000000;
+        --input-color: #3E7D32;
+        --button-color:#FF6600;
+        --white:#ffffff;
+        --black:#000000;
+        --red:#C7253E;
+        --mm: 1.4rem;
+        --sm: 2rem;
+        --md: 3rem;
+        --lg: 5rem;
+        --padding-container: 100px 0;
+    }
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: "Open Sans", sans-serif;
+}
+body {
+    display: grid;
+    grid-template-rows: 8% 1000px;
+}
+
+header {
+    background-color: #3E7D32;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    background: #A2D149;
+    padding: 10px;
+}
+.nav_logo--mesa{
+    width: 100px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size:  var(--md);
+}
+nav a:hover {
+    background: #3E7D32;
+}
+.nav_link{
+    font-size:var(--sm);
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+}
+.main-container{
+    width: 100%;
+    height: 850px;
+}
+.container-table {
+    max-width: 90%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.admin-info {
+    text-align: center;
+    font-size: var(--md);
+    margin-bottom: 20px;
+    color: #3E7D32;
+
+}
+h2 {
+    text-align: center;
+    color: #3E7D32;
+    font-size: var(--sm);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    font-size: var(--mm);
+}
+th {
+    background-color: #A2D149;
+    color: white;
+}
+.btn-delete {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #FF6600;
+    color: white;
+    border-radius: 5px;
+}
+.btn-delete:hover {
+ background: var(--red);
+}
+.cta{
+    
+    display: inline-block;
+    background-color:var(--button-color);
+    justify-self: center;
+    margin:20px 45% ;
+    color: var(--white);
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+    font-size: var(--mm);
+}
+.cta:hover{
+    background: var(--red);
+}
+.footer{
+    background-color: #1D293F;
+}
+       
+.footer_title{
+    font-weight: 300;
+    font-size: var(--md);
+    margin: 20px;
+}
+    
+.footer_title, .footer_newsletter{
+    font-size: var(--md);
+    color: var(--white);
+    }
+    
+.footer_container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid #fff ; 
+}
+    
+.nav--footer{
+    padding-bottom: 20px;
+    display: grid;
+    gap: 2em;
+    grid-auto-flow: row;
+    height: 100%;
+}
+    
+.nav_link--footer{
+    display: flex;
+    margin: 0;
+    margin-right: 20px;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.footer_links{
+    color: var(--white);
+    text-decoration: none;
+}
+    
+.footer_inputs{
+    margin-top: 10px;
+    display: flex;
+    overflow: hidden;
+}
+    
+.footer_input{
+    background-color: var(--white);
+    height: 50px;
+    display: block;
+    padding-left: 10px;
+    border-radius: 6px;
+    font-size: var(--sm);
+    outline: none;
+    border: none;
+    margin-right: 16px;
+}
+    
+.footer_submit{
+    margin-left: auto;
+    display: inline-block;
+    height: 50px;
+    padding: 0 20px;
+    background-color: #2097f9;
+    border: none;
+    font-size: var(--sm);
+    color: var(--white);
+    border-radius: 6px;
+}
+    
+.footer_copy{
+    --padding-container: 30px 0;
+    text-align: center;
+    color: var(--white);
+
+}
+    
+.footer_copyright{
+    font-size: var(--sm);
+    font-weight: 300;   
+}
+    
+.footer_icons{
+    display: inline-flex;
+    margin-bottom: 10px;
+}
+    
+.footer_img{
+    width: 40px;
+}

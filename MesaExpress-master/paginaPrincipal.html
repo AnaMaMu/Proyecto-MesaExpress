@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./landding/IMAGES/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./landding/CSS/normalize.css">
+    <link rel="stylesheet" href="./landding/CSS/stylesPP.CSS">
+    <title>MesaExpress</title>
+</head>
+<body>
+    <header class="header">
+        <img src="landding/IMAGES/Logos MesaExpress/LogoMesaExpress.png" alt="logo Mesaexpress" class="nav_logo--mesa">
+        <div class="title">MesaExpress</div>
+        <nav class="nav-menu">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faqs">FAQs</a>
+            <a href="#about">About</a>
+        </nav>
+        <input type="text" class="search-bar" placeholder="Buscar...">
+        <div class="user-name" id="usuario"></div>
+        <div class="cart-container">
+            <span class="cart" onclick="toggleCart()">🛒</span>
+            <div class="cart-dropdown" id="cart-dropdown">Carrito vacío</div>
+        </div>
+        <button id="logout-button" class="cta">Cerrar Sesión</button>
+    </header>
+    <main class="main" id="restaurant-container"></main>
+   
+    <footer class="footer">
+        <section class="footer_container container">
+            <nav class="nav nav--footer">
+                <h2 class="footer_title">Explora Nuestros Establecimientos</h2>
+
+                <ul class="nav_link nav_link--footer">
+                    <li class="nav_items">
+                        <a href="#" class="footer_links">Inicio</a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="#" class="footer_links">Acerca de</a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="#" class="footer_links">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <form class="footer_form">
+                <h2 class="footer_newsletter">registrate</h2>
+                <div class="footer_inputs">
+                    <input type="email" placeholder="Email" class="footer_input">
+                    <input type="submit" value="Registrate" class="footer_submit">
+                </div>
+            </form>
+        </section>
+
+        <section class="footer_copy container">
+            <div class="footer_social">
+                <a href="#" class="footer_icons"><img src="./landding/IMAGES/facebook.svg" alt="Logo facebbok" class="footer_img"></a>
+                <a href="#" class="footer_icons"><img src="./landding/IMAGES/youtube.svg" alt="Logo Youtube" class="footer_img"></a>
+                <a href="#" class="footer_icons"><img src="./landding/IMAGES/twitter.svg" alt="logo Twitter" class="footer_img"></a>
+            </div>
+
+            <p class="footer_copyright">&copy; 2025 MesaExpress - Todos los derechos reservados</p>
+        </section>
+   </footer>
+
+    <script src="./js/pp.js"></script>
+</body>
+</html>
+
+
+
