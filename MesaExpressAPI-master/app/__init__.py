@@ -3,9 +3,13 @@ from flask_cors import CORS
 from app.routes.login import loginIniciado
 from app.routes.admin import adminStart
 from app.routes.registro import registroUsuarios
+from app.routes.productos import productos_bp
+
 
 def create_app():
     app = Flask(__name__)
+    app.register_blueprint(productos_bp)
+
 
     # ✅ Configuración CORS corregida
     CORS(app, resources={
