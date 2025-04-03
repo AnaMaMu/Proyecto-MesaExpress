@@ -1,6 +1,5 @@
 from flask import Blueprint, request, jsonify
-from config.db import obtener_conexion
-
+from conexion_mysql import conectar_a_mysql  # Cambiar la importación
 
 productos_bp = Blueprint('productos', __name__)
 
@@ -8,13 +7,13 @@ productos_bp = Blueprint('productos', __name__)
 @productos_bp.route('/productos', methods=['GET'])
 def obtener_productos():
     try:
-        conexion = obtener_conexion()
+        conexion = conectar_a_mysql()  # Usar la nueva función
         with conexion.cursor() as cursor:
             cursor.execute("SELECT * FROM productos")
             productos = cursor.fetchall()
             columnas = [desc[0] for desc in cursor.description]
             resultado = [dict(zip(columnas, fila)) for fila in productos]
-        conexion.close()
+        conexion.close()  # Cerrar la conexión después de usarla
         return jsonify(resultado)
     except Exception as e:
         print(f"Error al obtener productos: {e}")
@@ -30,12 +29,12 @@ def agregar_producto():
     imagen = data.get('imagen')
 
     try:
-        conexion = obtener_conexion()
+        conexion = conectar_a_mysql()  # Usar la nueva función
         with conexion.cursor() as cursor:
             cursor.execute("INSERT INTO productos (nombre, descripcion, precio, imagen) VALUES (%s, %s, %s, %s)",
                            (nombre, descripcion, precio, imagen))
             conexion.commit()
-        conexion.close()
+        conexion.close()  # Cerrar la conexión después de usarla
         return jsonify({'mensaje': 'Producto agregado correctamente'})
     except Exception as e:
         print(f"Error al agregar producto: {e}")
@@ -45,11 +44,11 @@ def agregar_producto():
 @productos_bp.route('/productos/<int:id>', methods=['DELETE'])
 def eliminar_producto(id):
     try:
-        conexion = obtener_conexion()
+        conexion = conectar_a_mysql()  # Usar la nueva función
         with conexion.cursor() as cursor:
             cursor.execute("DELETE FROM productos WHERE id = %s", (id,))
             conexion.commit()
-        conexion.close()
+        conexion.close()  # Cerrar la conexión después de usarla
         return jsonify({'mensaje': 'Producto eliminado correctamente'})
     except Exception as e:
         print(f"Error al eliminar producto: {e}")
@@ -65,12 +64,12 @@ def actualizar_producto(id):
     imagen = data.get('imagen')
 
     try:
-        conexion = obtener_conexion()
+        conexion = conectar_a_mysql()  # Usar la nueva función
         with conexion.cursor() as cursor:
             cursor.execute("UPDATE productos SET nombre = %s, descripcion = %s, precio = %s, imagen = %s WHERE id = %s",
                            (nombre, descripcion, precio, imagen, id))
             conexion.commit()
-        conexion.close()
+        conexion.close()  # Cerrar la conexión después de usarla
         return jsonify({'mensaje': 'Producto actualizado correctamente'})
     except Exception as e:
         print(f"Error al actualizar producto: {e}")
